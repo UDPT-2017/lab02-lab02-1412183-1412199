@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+  head
+    block head
+        title #{title}
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='css/_layout.css')
+        
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/home')
+            img(src="/image/image-team/symbol.png", style="margin-bottom:3px;")
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/home') Home
+            li
+              a(href='/messageReceived') Messages
+            li
+              a(href='/users') Users
+            li
+              a(href='/about') About
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href="#") #{name}
+            li
+              a(href="#")
+                span( id="signup" class="glyphicon glyphicon-user") Logout
+
+    .container-fluid(style="background:#EFEFEF")
+      block leftsidebar
+          .col-sm-2.sidenav
+            ul(class="nav nav-list" style="height:600px")
+              li(class="icon-user")
+                a(href="/messageNew") New Messages
+              li(class="icon-envelope")
+                a(href="/messageReceived") Messages Received
+              li(class="icon-envelope")
+                a(href="/messageSent") Messages Sent
+              li(class="icon-comment")
+                a(href="/friend") Friend
+              li(class="icon-share")
+                a(href="#") Logout
+      block content
+      
+      block footer
+    footer.container-fluid.text-center
+      p Made by Hplus's team

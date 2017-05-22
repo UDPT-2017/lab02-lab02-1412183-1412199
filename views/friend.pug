@@ -1,0 +1,7 @@
+extend layout.pug
+block content
+  div(class="container" style="height:600px")
+    h1 Lists Friend
+    each bn in fr.rows
+      strong
+        p #{bn.name}

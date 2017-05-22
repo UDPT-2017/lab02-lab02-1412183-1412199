@@ -1,0 +1,10 @@
+extend layout.pug
+block content
+  div(class="container")
+    h1 Messages
+    each tn in mes.rows
+      div(class="messages")
+        strong
+          p #{tn.name}:
+        p <-- #{tn.contents}
+          p at #{tn.time}

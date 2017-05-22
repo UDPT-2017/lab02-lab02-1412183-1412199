@@ -1,0 +1,8 @@
+extend layout.pug
+block content
+  div(class="container" style="height:600px")
+    h1 Lists User
+    each nd in usr.rows
+      div(style="margin-left:50px")
+        p #{nd.name}
+          button(class="btn-success") Add Friend

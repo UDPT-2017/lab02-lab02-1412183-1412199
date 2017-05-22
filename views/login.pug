@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+  head
+    block head
+        title #{title}
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='css/_layout.css')
+        
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='#')
+            img(src="/image/image-team/symbol.png", style="margin-bottom:3px;")
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') Home
+            li
+              a(href='#') Messages
+            li
+              a(href='#') Users
+            li
+              a(href='#') About
+          ul.nav.navbar-nav.navbar-right
+              li
+                a(href="/signup")
+                  span( id="signup" class="glyphicon glyphicon-user") Sign Up
+              li
+                a(href="/login")
+                  span(id="login" class="glyphicon glyphicon-log-in") Login
+
+                  
+    .container-fluid(style="background:#EFEFEF")
+      div(class="container" style="height:600px")
+        h2 Login to Blog
+        form(class="form-horizontal" action="" method="POST" enctype="application/x-www-form-urlencoded")
+          label(class="control-label col-sm-2" for="email") Email
+          div(class="col-sm-3")
+            input(type="email" class="form-control" name="email" placeholder="Enter email")
+          
+          label(class="control-label col-sm-2" for="pwd") Password
+          div(class="col-sm-3")
+            input(type="password" class="form-control" name="pwd" placeholder="Enter password")
+
+          div(class="col-sm-offset-2 col-sm-10")
+              div(class="checkbox")
+                input(type="checkbox")
+                label Remember me
+          div(class="col-sm-offset-2 col-sm-10")
+              button(type="submit" class="btn btn-default") Login
+    footer.container-fluid.text-center
+      p Made by Hplus's team
