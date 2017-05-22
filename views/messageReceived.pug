@@ -1,10 +1,11 @@
 extend layout.pug
 block content
   div(class="container")
-    h1 Messages
+    h1 Messages Received
     each tn in mes.rows
       div(class="messages")
         strong
           p #{tn.name}:
-        p --> #{tn.contents}
-          p at #{tn.time}
+        span(style="color:red") -->
+        p #{tn.contents}
+        p at #{tn.time}

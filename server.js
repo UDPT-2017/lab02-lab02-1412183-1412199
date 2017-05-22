@@ -26,7 +26,7 @@ var control = require('./controllers');
 
 
 app.get('/', control.login);
-app.post('/', control.login_post);
+app.post('/', urlencodedParser, control.login_post);
 app.get('/home', control.home);
 app.get('/messageReceived', control.messageReceived);
 app.get('/messageSent', control.messageSent);
@@ -39,6 +39,7 @@ app.get('/login', control.login);
 app.post('/login', urlencodedParser, control.login_post);
 app.get('/signup', control.sigup);
 app.post('/signup', urlencodedParser, control.sigup_post);
+app.get('/logout', control.logout);
 
 var port = 9090;
 app.listen(port, function() {

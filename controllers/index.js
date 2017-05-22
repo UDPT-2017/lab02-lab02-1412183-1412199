@@ -11,4 +11,5 @@ module.exports = {
     login_post: require('./loginController_post'),
     sigup: require('./signupController'),
     sigup_post: require('./signupController_post'),
+    logout: require('./logoutController.js')
 };

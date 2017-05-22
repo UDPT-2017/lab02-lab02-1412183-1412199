@@ -26,13 +26,15 @@ module.exports = function(req, res){
                 res.redirect('./signup');
             }
             else{
-                client.query("INSERT INTO accounts (mail, password, name, phone) VALUES ('"+acc+"','"+pas+"','"+name+"','"+phone+"')", function(err, result) {
+                client.query("INSERT INTO accounts (mail, password, name, phone) VALUES ('"+acc+"','"+pas+"','"+name+"','"+phone+"')", function(err, result_2) {
                     done();
                     if (err) {
                         res.end();
                         return console.error('error running query', err);
                     }
-                    res.redirect('./messages');
+                    session.uniqueId = acc;
+                    session.name = name;
+                    res.redirect('./messageReceived');
                 });
             }
         });
